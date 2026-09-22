@@ -1,6 +1,6 @@
 services:
   db:
-    image: shaikmustafa/pyapp:dbimage
+    image: shaikmustafa/pyapp:db_image
     deploy:
       replicas: 1
     ports:
@@ -9,7 +9,7 @@ services:
       - mynetwork
 
   auth_service:
-    image: shaikmustafa/pyapp:authimage
+    image: shaikmustafa/pyapp:auth_image
     deploy:
       replicas: 1
     ports:
@@ -20,7 +20,7 @@ services:
       - db
 
   book_service:
-    image: shaikmustafa/pyapp:bookimage
+    image: shaikmustafa/pyapp:book_image
     deploy:
       replicas: 1
     ports:
@@ -31,7 +31,7 @@ services:
       - db
 
   borrow_service:
-    image: shaikmustafa/pyapp:borrowimage
+    image: shaikmustafa/pyapp:borrow_image
     deploy:
       replicas: 1
     ports:
