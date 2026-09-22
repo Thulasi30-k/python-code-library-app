@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: nagathulasi/pyapp:db
+    image: shaikmustafa/flm2026:dbimage
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth:
-    image: nagathulasi/pyapp:auth
+    image: shaikmustafa/flm2026:authimage
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book:
-    image: nagathulasi/pyapp:book
+    image: shaikmustafa/flm2026:bookimage
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow:
-    image: nagathulasi/pyapp:borrow
+    image: shaikmustafa/flm2026:borrowimage
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image: nagathulasi/pyapp:frontend
+    image:shaikmustafa/flm2026:frontend
     deploy:
       replicas: 1
     ports:
