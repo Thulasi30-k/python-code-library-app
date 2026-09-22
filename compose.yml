@@ -1,7 +1,7 @@
 ---
 services:
   db:
-    image: shaikmustafa/flm2026:dbimage
+    image: shaikmustafa/pyapp:dbimage
     deploy:
       replicas: 1
     ports:
@@ -10,7 +10,7 @@ services:
       - mynetwork
 
   auth:
-    image: shaikmustafa/flm2026:authimage
+    image: shaikmustafa/pyapp:authimage
     deploy:
       replicas: 1
     ports:
@@ -22,7 +22,7 @@ services:
     
 
   book:
-    image: shaikmustafa/flm2026:bookimage
+    image: shaikmustafa/pyapp:bookimage
     deploy:
       replicas: 1
     ports:
@@ -32,7 +32,7 @@ services:
     depends_on:
       - db
   borrow:
-    image: shaikmustafa/flm2026:borrowimage
+    image: shaikmustafa/pyapp:borrowimage
     deploy:
       replicas: 1
     ports:
@@ -43,7 +43,7 @@ services:
       - db
 
   frontend:
-    image:shaikmustafa/flm2026:frontend
+    image:shaikmustafa/pyapp:frontend
     deploy:
       replicas: 1
     ports:
@@ -57,4 +57,4 @@ services:
 
 networks:
   mynetwork:
-    driver: bridge
+    driver: overlay
